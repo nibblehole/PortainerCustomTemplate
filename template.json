@@ -36,7 +36,7 @@
             "url":"https://github.com/RioT-LiNaRo/PortainerCustomTemplate"
          },
          "title":"Nextcloud",
-         "type":1
+         "type":2
       },
       {
          "env":[
@@ -99,76 +99,12 @@
          "logo":"https://raw.githubusercontent.com/jc21/nginx-proxy-manager/master/frontend/app-images/logo-256.png",
          "name":"nginx-proxy-manager",
          "platform":"linux",
-         "restart_policy":"unless-stopped",
-         "ports":[
-            "80:80/tcp",
-            "81:81/tcp",
-            "443:443/tcp"
-         ],
-         "title":"Nginx Proxy Manager",
-         "type":1,
-         "volumes":[
-            {
-               "bind":"/portainer/Files/AppData/Config/nginx/config.json",
-               "container":"/app/config/production.json"
-            },
-            {
-               "bind":"/portainer/Files/AppData/Config/nginx/data",
-               "container":"/data"
-            },
-            {
-               "bind":"/portainer/Files/AppData/Config/nginx/letsencrypt",
-               "container":"/etc/letsencrypt"
-            }
-         ]
-      },
-      {
-         "env":[
-         {
-               "default":"1000",
-               "label":"PUID",
-               "name":"PUID"
-          },
-         {
-               "default":"100",
-               "label":"PGID",
-               "name":"PGID"
+         "repository":{
+            "stackfile":"nginx-proxy-manager.yml",
+            "url":"https://github.com/RioT-LiNaRo/PortainerCustomTemplate"
          },
-            {
-               "label":"TZ",
-               "name":"TZ"
-            },
-            {
-               "label":"DATABASE_PASSWORD",
-               "name":"DATABASE_PASSWORD"
-            },
-            {
-               "label":"MYSQL_ROOT_PASSWORD",
-               "name":"MYSQL_ROOT_PASSWORD"
-            },
-            {
-               "label":"MYSQL_DATABASE1",
-               "name":"MYSQL_DATABASE1"
-            },
-            {
-               "label":"MYSQL_DATABASE2",
-               "name":"MYSQL_DATABASE2"
-            },
-            {
-               "label":"MYSQL_USER",
-               "name":"MYSQL_USER"
-            }
-         ],
-         "image":"yobasystems/alpine-mariadb:latest",
-         "logo":"https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Images/mariadb-icon.png",
-         "name":"database",
-         "platform":"linux",
-         "ports":[
-            "3306:3306/tcp"
-         ],
-         "restart_policy":"unless-stopped",
-         "title":"DataBase",
-         "type":1
+         "title":"Nginx Proxy Manager",
+         "type":2
       }
    ]
 }
