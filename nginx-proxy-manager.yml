@@ -13,3 +13,15 @@ services:
       - 443:443
       - 81:81
     restart: unless-stopped
+    depends_on:
+      - nginx-proxy-manager_db
+  nginx-proxy-manager_db:
+    image: yobasystems/alpine-mariadb:latest
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: 'DBROOTPW'
+      MYSQL_DATABASE: 'NGINX'
+      MYSQL_USER: 'DBUSER'
+      MYSQL_PASSWORD: 'DBPW'
+    volumes:
+      - ./data/mysql:/var/lib/mysql
