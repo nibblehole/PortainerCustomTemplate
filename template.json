@@ -106,13 +106,50 @@
          "type":1
       },
       {
+         "env":[
+         {
+               "default":"1000",
+               "label":"PUID",
+               "name":"PUID"
+          },
+         {
+               "default":"100",
+               "label":"PGID",
+               "name":"PGID"
+         },
+            {
+               "label":"TZ",
+               "name":"TZ"
+            },
+            {
+               "label":"DATABASE_PASSWORD",
+               "name":"DATABASE_PASSWORD"
+            },
+            {
+               "label":"MYSQL_ROOT_PASSWORD",
+               "name":"MYSQL_ROOT_PASSWORD"
+            },
+            {
+               "label":"MYSQL_DATABASE1",
+               "name":"MYSQL_DATABASE1"
+            },
+            {
+               "label":"MYSQL_DATABASE2",
+               "name":"MYSQL_DATABASE2"
+            },
+            {
+               "label":"MYSQL_USER",
+               "name":"MYSQL_USER"
+            }
+         ],
+         "image":"yobasystems/alpine-mariadb:latest",
          "logo":"https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Images/mariadb-icon.png",
          "name":"database",
          "platform":"linux",
-         "repository":{
-            "stackfile":"database.yml",
-            "url":"https://github.com/RioT-LiNaRo/PortainerCustomTemplate"
-         },
+         "ports":[
+            "3306:3306/tcp"
+         ],
+         "restart_policy":"unless-stopped",
          "title":"DataBase",
          "type":1
       }
