@@ -36,7 +36,7 @@
             "url":"https://github.com/RioT-LiNaRo/PortainerCustomTemplate"
          },
          "title":"Nextcloud",
-         "type":2
+         "type":3
       },
       {
          "env":[
@@ -103,7 +103,7 @@
             "url":"https://github.com/RioT-LiNaRo/PortainerCustomTemplate"
          },
          "title":"Nginx Proxy Manager",
-         "type":2
+         "type":3
       }
    ]
 }
