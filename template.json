@@ -95,15 +95,32 @@
          "type":1
       },
       {
+         "image":"jc21/nginx-proxy-manager:latest",
          "logo":"https://raw.githubusercontent.com/jc21/nginx-proxy-manager/master/frontend/app-images/logo-256.png",
          "name":"nginx-proxy-manager",
          "platform":"linux",
-         "repository":{
-            "stackfile":"nginx-proxy-manager.yml",
-            "url":"https://github.com/RioT-LiNaRo/PortainerCustomTemplate"
-         },
+         "restart_policy":"unless-stopped",
+         "ports":[
+            "80:80/tcp",
+            "81:81/tcp",
+            "443:443/tcp"
+         ],
          "title":"Nginx Proxy Manager",
-         "type":1
+         "type":1,
+         "volumes":[
+            {
+               "bind":"/portainer/Files/AppData/Config/nginx/config.json",
+               "container":"/app/config/production.json"
+            },
+            {
+               "bind":"/portainer/Files/AppData/Config/nginx/data",
+               "container":"/data"
+            },
+            {
+               "bind":"/portainer/Files/AppData/Config/nginx/letsencrypt",
+               "container":"/etc/letsencrypt"
+            }
+         ]
       },
       {
          "env":[
