@@ -2,6 +2,8 @@
 version: "2"
 services:
   nextcloud:
+    depends_on:
+      - nextcloud_db
     image: linuxserver/nextcloud
     container_name: nextcloud
     environment:
@@ -12,4 +14,16 @@ services:
       - /portainer/Files/AppData/Config/Nextcloud/Config:/config
     ports:
       - 32772:443
+    restart: unless-stopped
+  nextcloud_db:
+    image: linuxserver/mariadb
+    container_name: nextcloud_db
+    environment:
+      - PUID=1000
+      - PGID=100
+      - MYSQL_ROOT_PASSWORD=DBROOTPW
+      - TZ=Europe/berlin
+      - MYSQL_DATABASE=NEXTCLOUD
+      - MYSQL_USER=DBUSER
+      - MYSQL_PASSWORD=DBUSERPW
     restart: unless-stopped
