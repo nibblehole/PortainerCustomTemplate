@@ -107,13 +107,13 @@
       },
       {
          "logo":"https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Images/mariadb-icon.png",
-         "name":"DataBase",
+         "name":"database",
          "platform":"linux",
          "repository":{
             "stackfile":"database.yml",
             "url":"https://github.com/RioT-LiNaRo/PortainerCustomTemplate"
          },
-         "title":"Nginx Proxy Manager",
+         "title":"DataBase",
          "type":1
       }
    ]
