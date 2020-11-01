@@ -19,8 +19,8 @@ services:
     image: yobasystems/alpine-mariadb:latest
     container_name: nginx-proxy-manager_db
     environment:
-      MYSQL_ROOT_PASSWORD: 'DBROOTPW'
-      MYSQL_DATABASE: 'NGINX'
-      MYSQL_USER: 'DBUSER'
-      MYSQL_PASSWORD: 'DBPW'
+      MYSQL_ROOT_PASSWORD=DBROOTPW
+      MYSQL_DATABASE=NGINX
+      MYSQL_USER=DBUSER
+      MYSQL_PASSWORD=DBUSERPW
     restart: unless-stopped
