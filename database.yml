@@ -1,6 +1,5 @@
 --
 version: "2"
-services:
     image: yobasystems/alpine-mariadb:latest
     container_name: database
     environment:
