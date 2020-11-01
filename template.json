@@ -95,7 +95,6 @@
          "type":1
       },
       {
-         "image":"jc21/nginx-proxy-manager:latest",
          "logo":"https://raw.githubusercontent.com/jc21/nginx-proxy-manager/master/frontend/app-images/logo-256.png",
          "name":"nginx-proxy-manager",
          "platform":"linux",
