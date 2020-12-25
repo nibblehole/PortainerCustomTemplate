@@ -2,6 +2,13 @@
    "version":"2",
    "templates":[
       {
+			"env": [
+				{
+					"label": "TZ",
+					"name": "TZ"
+					"set": "Europe/Berlin"
+				}
+			],
          "image":"pihole/pihole:latest",
          "logo":"https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Images/pihole.png",
          "name":"pihole",
