@@ -20,7 +20,7 @@ services:
       - PUID=1000
       - PGID=100
       - MYSQL_ROOT_PASSWORD=DBROOTPW
-      - TZ=Europe/berlin
+      - TZ=Europe/Berlin
       - MYSQL_DATABASE=NEXTCLOUD
       - MYSQL_USER=DBUSER
       - MYSQL_PASSWORD=DBUSERPW
