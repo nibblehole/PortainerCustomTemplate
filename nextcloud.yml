@@ -14,7 +14,7 @@ services:
       - 32772:443
     restart: unless-stopped
   nextcloud_db:
-    image: linuxserver/mariadb
+    image: yobasystems/alpine-mariadb:latest
     container_name: nextcloud_db
     environment:
       - PUID=1000
